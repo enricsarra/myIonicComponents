@@ -1,0 +1,47 @@
+<ion-header no-border>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>List - Reorder</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-card>
+        <ion-card-header>
+            <ion-card-subtitle>Component ion-reorder-group </ion-card-subtitle>
+            <ion-card-title>ion-reorder-group </ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content class="ion-padding">
+            Reorder is a component that allows an item in a group of items to be dragged to change its order within that group. It must be used within an ion-reorder-group to provide a visual drag and drop interface.
+            ion-reorder is the anchor used to drag and drop the items inside of the ion-reorder-group. See the Reorder Group for more information on how to complete the reorder operation.
+        </ion-card-content>
+    </ion-card>
+    <ion-card-subtitle *ngIf="action" color="danger" class="ion-padding"> {{ action }}</ion-card-subtitle>
+
+  <ion-list>
+
+    <ion-reorder-group [disabled]="false"
+                      (ionItemReorder)="reorder( $event )">
+
+      <ion-item *ngFor="let personaje of personajes">
+        <ion-label> {{ personaje }} </ion-label>
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+
+    </ion-reorder-group>
+
+
+  </ion-list>
+
+  <ion-button expand="full" 
+              (click)="onClick()">
+    Save
+  </ion-button>
+
+</ion-content>

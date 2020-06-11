@@ -1,0 +1,31 @@
+<app-header titulo="Checkbox"></app-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-subtitle>Component ion-avatar</ion-card-subtitle>
+            <ion-card-title>ion-avatar</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content class="ion-padding">
+            Checkboxes allow the selection of multiple options from a set of options. They appear as checked (ticked) when activated. Clicking on a checkbox will toggle the checked property. They can also be checked programmatically by setting the checked property.
+
+        </ion-card-content>
+    </ion-card>
+
+
+    <ion-list>
+
+        <ion-item *ngFor="let check of data" (click)="onClick( check )">
+
+            <ion-label> {{ check.name }} </ion-label>
+            <ion-checkbox [(ngModel)]="check.selected" [color]="check.name">
+            </ion-checkbox>
+
+        </ion-item>
+    </ion-list>
+
+    <ion-card-subtitle *ngIf="action" color="danger" class="ion-padding"> {{ action }} </ion-card-subtitle>
+
+
+</ion-content>

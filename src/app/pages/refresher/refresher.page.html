@@ -1,0 +1,37 @@
+<app-header titulo="Refresher"></app-header>
+
+<ion-content padding>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content> </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-card>
+        <ion-card-header>
+            <ion-card-subtitle>Component ion-refresher</ion-card-subtitle>
+            <ion-card-title>ion-refresher</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content class="ion-padding">
+            The refresher provides pull-to-refresh functionality on a content component. The pull-to-refresh pattern lets a user pull down on a list of data using touch in order to retrieve more data.
+
+            Data should be modified during the refresher's output events. Once the async operation has completed and the refreshing should end, call complete() on the refresher.
+        </ion-card-content>
+    </ion-card>
+    <!-- <ion-card-subtitle *ngIf="action" color="danger" class="ion-padding"> {{ action }}</ion-card-subtitle> -->
+
+  <h1 *ngIf="items.length === 0"
+      class="animated fadeIn fast">
+      Pull or Drag down to refresh
+  </h1>
+
+
+  <ion-list *ngIf="items.length > 0"
+            class="animated fadeIn fast">
+    <ion-item *ngFor="let item of items; let i = index">
+      Item {{ i + 1 }}
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>

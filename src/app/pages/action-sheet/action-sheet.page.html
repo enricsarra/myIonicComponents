@@ -1,0 +1,24 @@
+<app-header titulo="action-sheet page"></app-header>
+
+<ion-content expand="full" class="ion-padding">
+    <ion-button expand="full" color-primary (click)="presentActionSheet()">
+        View Action Sheet
+    </ion-button>
+
+    <ion-card>
+        <ion-card-header>
+            <ion-card-subtitle>Component ion-action-sheet</ion-card-subtitle>
+            <ion-card-title>ion-action-sheet</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+            An Action Sheet is a dialog that displays a set of options. It appears on top of the app's content, and must be manually dismissed by the user before they can resume interaction with the app. Destructive options are made obvious in ios mode. There are
+            multiple ways to dismiss the action sheet, including tapping the backdrop or hitting the escape key on desktop.
+        </ion-card-content>
+    </ion-card>
+    <ion-card-subtitle *ngIf="action" color="danger" class="ion-padding"> {{ action }}</ion-card-subtitle>
+
+
+
+
+</ion-content>
